@@ -18,6 +18,9 @@ fa_casoshumanos_1994_2021 <- transform(fa_casoshumanos_1994_2021,
 
 hist(fa_casoshumanos_1994_2021$IDADE, main = 'Distribuição de idades', xlab = 'Idade', ylab = 'Frequência')
 
+# O teste comprova que é uma distribuição normal
+shapiro.test(fa_casoshumanos_1994_2021$IDADE)
+
 # Separando casos por estado
 casos_x_estado <- count(fa_casoshumanos_1994_2021, fa_casoshumanos_1994_2021$UF_LPI, sort = TRUE)
 
